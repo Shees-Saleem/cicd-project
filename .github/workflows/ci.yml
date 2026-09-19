@@ -10,6 +10,7 @@ on:
 
 jobs:
   test:
+
     runs-on: ubuntu-latest
 
     steps:
@@ -29,5 +30,6 @@ jobs:
 
       - name: Run tests
         run: PYTHONPATH=. pytest
+
       - name: Build Docker image
         run: docker build -t cicd-project:${{ github.sha }} .
